@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Get Key — Rkzkee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px clamp(20px,5vw,60px) 60px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero-inner { max-width: 640px; }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      color: var(--text-2);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 48px;
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    .step-row:hover {
+      border-color: rgba(124,92,252,0.3);
+      background: var(--surface2);
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-d));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .step-info h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .step-info p  { font-size: 0.82rem; color: var(--text-2); line-height: 1.55; }
+
+    .key-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-d));
+      color: #fff;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      box-shadow: 0 8px 32px rgba(124,92,252,0.4);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .key-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 48px rgba(124,92,252,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-box">R</span>
+        <span class="logo-text">rkzkee<span class="logo-dot">.com</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="scripts.html" class="nav-link">Scripts</a></li>
+        <li><a href="premium.html" class="nav-link">Premium</a></li>
+        <li><a href="executors.html" class="nav-link">Executors</a></li>
+        <li><a href="#" class="nav-link">Discord</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="status-badge"><span class="ping"></span>Operational</div>
+        <a href="getkey.html" class="btn-fill">Get Key</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="hero-eyebrow" data-reveal style="margin-bottom:24px; display:inline-flex; align-items:center; gap:8px;">
+        <span class="eyebrow-dot"></span>Free access — no payment required
+      </div>
+      <h1 data-reveal>Get your <span class="grad-text">free key.</span></h1>
+      <p data-reveal>Complete the checkpoint below to unlock your key. It resets every 24 hours for free users. Go premium to skip this every time.</p>
+
+      <div class="steps-list" data-reveal>
+        <div class="step-row">
+          <div class="step-num">01</div>
+          <div class="step-info">
+            <h4>Click the button below</h4>
+            <p>Opens the key checkpoint in a new tab.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">02</div>
+          <div class="step-info">
+            <h4>Complete the checkpoint</h4>
+            <p>Short link verification — takes under 60 seconds.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">03</div>
+          <div class="step-info">
+            <h4>Paste key into the executor</h4>
+            <p>Your key is valid for 24 hours from when you got it.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="key-cta" data-reveal>
+        Get Key
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 14 0M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 Rkzkee.com — not affiliated with Roblox Corporation.</p>
+        <div class="footer-status"><span class="ping small"></span>All systems operational</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
