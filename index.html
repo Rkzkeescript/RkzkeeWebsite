@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rkzkee — Script Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <!-- CANVAS PARTICLES -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-box">R</span>
+        <span class="logo-text">rkzkee<span class="logo-dot">.com</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="scripts.html" class="nav-link">Scripts</a></li>
+        <li><a href="premium.html" class="nav-link">Premium</a></li>
+        <li><a href="executors.html" class="nav-link">Executors</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+        <li><a href="#" class="nav-link">Discord</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="status-badge">
+          <span class="ping"></span>
+          Operational
+        </div>
+        <a href="getkey.html" class="btn-outline">Get Key</a>
+        <a href="premium.html" class="btn-fill">Premium</a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="scripts.html">Scripts</a>
+      <a href="premium.html">Premium</a>
+      <a href="executors.html">Executors</a>
+      <a href="#team">Team</a>
+      <a href="#">Discord</a>
+      <a href="getkey.html" class="mobile-cta">Get Key</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-reveal>
+        <span class="eyebrow-dot"></span>
+        v2.0 — 30+ games supported
+      </div>
+
+      <h1 class="hero-title" data-reveal>
+        <span class="line" data-text="The hub that">The hub that</span>
+        <span class="line grad-text" data-text="actually hits.">actually hits.</span>
+      </h1>
+
+      <p class="hero-sub" data-reveal>
+        Elite Roblox scripting. No bloat, no fake promises —<br>
+        just clean execution and a library that grows every week.
+      </p>
+
+      <div class="hero-code" data-reveal>
+        <span class="code-label">executor · paste and run</span>
+        <div class="code-block">
+          <pre id="loadstring-text">loadstring(game:HttpGet('https://rkzkee.com/loader.lua'))()</pre>
+          <button class="copy-btn" id="copy-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-ctas" data-reveal>
+        <a href="premium.html" class="cta-primary">
+          <span>Get Premium</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 14 0M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="getkey.html" class="cta-secondary">Free Key</a>
+        <a href="#" class="cta-secondary">Discord</a>
+      </div>
+    </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>Blox Fruits</span><span class="sep">·</span>
+        <span>Arsenal</span><span class="sep">·</span>
+        <span>King Legacy</span><span class="sep">·</span>
+        <span>Da Hood</span><span class="sep">·</span>
+        <span>Hoopz</span><span class="sep">·</span>
+        <span>Pet Sim X</span><span class="sep">·</span>
+        <span>Anime Defenders</span><span class="sep">·</span>
+        <span>Fruit Battlegrounds</span><span class="sep">·</span>
+        <span>Murder Mystery 2</span><span class="sep">·</span>
+        <span>Jailbreak</span><span class="sep">·</span>
+        <span>Blox Fruits</span><span class="sep">·</span>
+        <span>Arsenal</span><span class="sep">·</span>
+        <span>King Legacy</span><span class="sep">·</span>
+        <span>Da Hood</span><span class="sep">·</span>
+        <span>Hoopz</span><span class="sep">·</span>
+        <span>Pet Sim X</span><span class="sep">·</span>
+        <span>Anime Defenders</span><span class="sep">·</span>
+        <span>Fruit Battlegrounds</span><span class="sep">·</span>
+        <span>Murder Mystery 2</span><span class="sep">·</span>
+        <span>Jailbreak</span><span class="sep">·</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-count="99.9" data-suffix="%" data-label="Uptime"></div>
+        <div class="stat-item" data-count="1200" data-suffix="+" data-label="Monthly Users"></div>
+        <div class="stat-item" data-count="30" data-suffix="+" data-label="Games Supported"></div>
+        <div class="stat-item" data-count="247" data-suffix="" data-label="Discord Support"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow-label">why rkzkee</p>
+        <h2>Built to run.<br><em>Not to impress.</em></h2>
+        <p class="section-desc">Every feature here exists because someone actually needed it — not because it looks good on a landing page.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feat-card feat-large" data-tilt>
+          <div class="feat-number">01</div>
+          <div class="feat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Stable as fuck</h3>
+          <p>No random crashes. No detection spikes mid-session. We test before we ship — not after.</p>
+        </div>
+        <div class="feat-card" data-tilt>
+          <div class="feat-number">02</div>
+          <div class="feat-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Weekly updates</h3>
+          <p>New scripts and game patches every week, without fail.</p>
+        </div>
+        <div class="feat-card" data-tilt>
+          <div class="feat-number">03</div>
+          <div class="feat-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Active community</h3>
+          <p>Thousands online. Patches requested, delivered same day.</p>
+        </div>
+        <div class="feat-card" data-tilt>
+          <div class="feat-number">04</div>
+          <div class="feat-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Premium tier</h3>
+          <p>Skip cooldowns, unlock every game, early access to unreleased scripts.</p>
+        </div>
+        <div class="feat-card" data-tilt>
+          <div class="feat-number">05</div>
+          <div class="feat-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Free key system</h3>
+          <p>Full access to core scripts. No wallet required to get started.</p>
+        </div>
+        <div class="feat-card feat-large" data-tilt>
+          <div class="feat-number">06</div>
+          <div class="feat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Precision scripting</h3>
+          <p>Each script tuned per-game. Not the same logic copy-pasted into 30 wrappers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section class="games-section" id="games">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow-label">library</p>
+        <h2>Supported <em>games.</em></h2>
+        <p class="section-desc">Growing every week. Missing your game? Drop a request in Discord.</p>
+      </div>
+
+      <div class="games-grid">
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🎯</div>
+          <div class="game-info">
+            <h4>Blox Fruits</h4>
+            <span>Auto Farm · Boss Kill · Devil Fruit</span>
+          </div>
+          <div class="game-badge free">Free</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🔫</div>
+          <div class="game-info">
+            <h4>Arsenal</h4>
+            <span>Aimbot · ESP · Anti-AFK</span>
+          </div>
+          <div class="game-badge prem">Premium</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">⚔️</div>
+          <div class="game-info">
+            <h4>King Legacy</h4>
+            <span>Auto Quest · Farm · Teleport</span>
+          </div>
+          <div class="game-badge free">Free</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🏀</div>
+          <div class="game-info">
+            <h4>Hoopz</h4>
+            <span>Score Hack · Auto Dunk</span>
+          </div>
+          <div class="game-badge prem">Premium</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">💀</div>
+          <div class="game-info">
+            <h4>Da Hood</h4>
+            <span>Aimbot · Noclip · Speed</span>
+          </div>
+          <div class="game-badge free">Free</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🌊</div>
+          <div class="game-info">
+            <h4>Anime Defenders</h4>
+            <span>Auto Farm · Unit Unlock</span>
+          </div>
+          <div class="game-badge free">Free</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🏆</div>
+          <div class="game-info">
+            <h4>Pet Simulator X</h4>
+            <span>Auto Collect · Dupe Pets</span>
+          </div>
+          <div class="game-badge prem">Premium</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🗡️</div>
+          <div class="game-info">
+            <h4>Fruit Battlegrounds</h4>
+            <span>God Mode · Fly Hack</span>
+          </div>
+          <div class="game-badge free">Free</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🚔</div>
+          <div class="game-info">
+            <h4>Jailbreak</h4>
+            <span>Speed · Teleport · Money</span>
+          </div>
+          <div class="game-badge free">Free</div>
+        </div>
+        <div class="game-card" data-tilt>
+          <div class="game-emoji">🔪</div>
+          <div class="game-info">
+            <h4>Murder Mystery 2</h4>
+            <span>ESP · Role Reveal · Speed</span>
+          </div>
+          <div class="game-badge free">Free</div>
+        </div>
+        <div class="game-card more-card">
+          <div class="game-emoji">➕</div>
+          <div class="game-info">
+            <h4>+20 more</h4>
+            <span>New games every week</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow-label">the team</p>
+        <h2>Who built <em>this.</em></h2>
+        <p class="section-desc">Small team. High output. No outsourced garbage.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card founder" data-tilt>
+          <div class="founder-crown">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Founder
+          </div>
+          <div class="team-avatar founder-avatar">
+            <span>R</span>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="team-name">Rkzkee</h3>
+          <p class="team-role">Founder · Lead Developer</p>
+          <p class="team-bio">Built this from nothing. Writes the core, maintains the infra, keeps the whole thing alive.</p>
+          <div class="team-links">
+            <a href="#" class="team-link">Discord</a>
+            <a href="#" class="team-link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="team-card" data-tilt>
+          <div class="team-avatar"><span>V</span></div>
+          <h3 class="team-name">Vxid</h3>
+          <p class="team-role">Core Scripter</p>
+          <p class="team-bio">Responsible for half the game library. Patches fast, doesn't miss.</p>
+          <div class="team-links">
+            <a href="#" class="team-link">Discord</a>
+          </div>
+        </div>
+
+        <div class="team-card" data-tilt>
+          <div class="team-avatar"><span>Z</span></div>
+          <h3 class="team-name">Zrex</h3>
+          <p class="team-role">Infrastructure</p>
+          <p class="team-bio">Keeps the backend breathing. 99.9% uptime is his problem to maintain.</p>
+          <div class="team-links">
+            <a href="#" class="team-link">Discord</a>
+          </div>
+        </div>
+
+        <div class="team-card" data-tilt>
+          <div class="team-avatar"><span>N</span></div>
+          <h3 class="team-name">Nxva</h3>
+          <p class="team-role">Game Specialist</p>
+          <p class="team-bio">Tests every script before release. If it ships, Nxva cleared it.</p>
+          <div class="team-links">
+            <a href="#" class="team-link">Discord</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-glow"></div>
+        <h2>Ready to run?</h2>
+        <p>Get a key, load the script, and see what a real hub feels like.</p>
+        <div class="cta-actions">
+          <a href="getkey.html" class="cta-primary">Get Free Key</a>
+          <a href="premium.html" class="cta-secondary">Go Premium</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-box">R</span>
+            <span class="logo-text">rkzkee<span class="logo-dot">.com</span></span>
+          </a>
+          <p>The last script hub you'll ever need.</p>
+        </div>
+
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Hub</h5>
+            <a href="scripts.html">Scripts</a>
+            <a href="getkey.html">Get Key</a>
+            <a href="premium.html">Premium</a>
+            <a href="executors.html">Executors</a>
+          </div>
+          <div class="footer-col">
+            <h5>Community</h5>
+            <a href="#">Discord</a>
+            <a href="#team">Team</a>
+            <a href="#">Resellers</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Rkzkee.com — not affiliated with Roblox Corporation.</p>
+        <div class="footer-status">
+          <span class="ping small"></span>
+          All systems operational
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
